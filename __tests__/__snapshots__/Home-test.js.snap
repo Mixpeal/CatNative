@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View>
+      <Text
+        style={
+          Object {
+            "color": "#d3d3d4",
+            "marginBottom": 20,
+            "textAlign": "center",
+          }
+        }
+      >
+        Something went wrong
+      </Text>
+      <Text
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "color": "#000",
+            "fontWeight": "bold",
+            "textAlign": "center",
+          }
+        }
+      >
+        Tap to retry
+      </Text>
+    </View>
+  </View>
+</View>
+`;
