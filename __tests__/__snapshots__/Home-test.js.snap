@@ -48,6 +48,7 @@ exports[`renders correctly 1`] = `
             "textAlign": "center",
           }
         }
+        testID="tapToRetry"
       >
         Tap to retry
       </Text>

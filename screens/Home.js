@@ -36,6 +36,7 @@ export default function Home() {
     const onRefresh = useCallback(() => {
         setRefreshing(true);
         setPage(0)
+        setLoaded(false)
         fetchData().then(() => setRefreshing(false));
     }, []);
 
@@ -50,6 +51,7 @@ export default function Home() {
                 <FlatList
                     initialNumToRender={20}
                     data={cats}
+                    testID="cat-list"
                     renderItem={({ item }) =>
                         <EachCat item={item} />}
                     keyExtractor={(item) => "item_" + item['id']}
@@ -69,12 +71,12 @@ export default function Home() {
                 <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                     {(loading || refreshing) && !hasError ? (
                         <View style={{ paddingVertical: 10 }}>
-                            <ActivityIndicator size={40} color="red" />
+                            <ActivityIndicator testId="loading-indicator" size={40} color="red" />
                         </View>
                     ) : <View>
                         <Text style={{ color: '#d3d3d4', textAlign: 'center', marginBottom: 20 }}>Something went wrong</Text>
                         <TouchableWithoutFeedback onPress={onRefresh}>
-                            <Text style={{ color: '#000', fontWeight: 'bold', textAlign: 'center' }}>Tap to retry</Text>
+                            <Text style={{ color: '#000', fontWeight: 'bold', textAlign: 'center' }} testID="tapToRetry" >Tap to retry</Text>
                         </TouchableWithoutFeedback>
                     </View>}
 

@@ -13,3 +13,5 @@ jest.mock('@react-navigation/native', () => ({
     },
     useIsFocused: jest.fn(),
 }));
+
+jest.mock('axios');
