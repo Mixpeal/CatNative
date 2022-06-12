@@ -38,7 +38,7 @@ export default function Home() {
         setPage(0)
         setLoaded(false)
         fetchData().then(() => setRefreshing(false));
-    }, []);
+    }, [isFocused]);
 
 
     useEffect(() => {
@@ -52,14 +52,10 @@ export default function Home() {
                     initialNumToRender={20}
                     data={cats}
                     testID="cat-list"
-                    renderItem={({ item }) =>
-                        <EachCat item={item} />}
+                    renderItem={({ item }) => <EachCat item={item} />}
                     keyExtractor={(item) => "item_" + item['id']}
                     onEndReachedThreshold={0.01}
-                    onEndReached={info => {
-                        fetchData(info);
-                    }
-                    }
+                    onEndReached={(info) => fetchData(info)}
                     refreshControl={
                         <RefreshControl
                             refreshing={refreshing}

@@ -20,7 +20,7 @@ export default function EachCat({ item }) {
     }
     useEffect(() => {
         isFaved();
-    }, [adding])
+    }, [adding, isFaved])
     const toggleFavs = async (fav) => {
         try {
             if (!adding) {
